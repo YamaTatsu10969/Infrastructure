@@ -391,3 +391,55 @@ SSH は 22番ポートを使っているぞ。
 バックアップもしてるよ！ 
 
 ## Multi-AZ
+
+
+# コマンド一覧
+
+```
+​​cd
+​​mkdir .ssh
+​​chmod 700 .ssh
+​​cd .ssh
+​​mv ~/Desktop/test99.pem ./
+​​chmod 600 test99.pem
+​​ssh -i test99.pem ec2-user@xxxxxxxxxxx
+​​
+​​sudo su -
+​​amazon-linux-extras install php7.3
+​​yum install httpd php7.3
+​​systemctl start httpd
+​​
+​​cd /var/www/html
+​​vim index.html
+​​
+​​yum -y install php-devel php-pdo php-mbstring php-mcrypt php-mysqlnd php-xml php-gd php-opcache php-pecl-zip
+​​
+​​curl -sS https://getcomposer.org/installer | php
+​​mv composer.phar /usr/local/bin/composer
+​​composer config -g repos.packagist composer https://packagist.jp
+​​composer global require hirak/prestissimo
+​​
+​​composer create-project --prefer-dist "laravel/laravel=5.5.*" ./app
+​​
+​​vim /etc/httpd/conf/httpd.conf
+​​systemctl restart httpd
+​​chown -R apache:apache app
+​​
+​​php artisan make:auth
+​​php artisan migrate
+​​
+​​yum install docker
+​​systemctl start docker
+​​
+​​docker pull mysql:5.7
+​​docker run --name mysql -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_DATABASE=test -e MYSQL_USER=test -e MYSQL_PASSWORD=testtest -p 3306:3306 -d mysql:5.7
+​​
+​​DB_CONNECTION=mysql
+​​DB_HOST=127.0.0.1
+​​DB_PORT=3306
+​​DB_DATABASE=test
+​​DB_USERNAME=test
+​​DB_PASSWORD=testtest
+​​
+​​php artisan migrate
+```
